@@ -48,3 +48,12 @@ create table matricula (
 	constraint fk_curso foreign key (curso)
 	references curso (id_curso)
 )
+alter table matricula 
+	add  valor_matricula int (10)
+
+
+	create table ingreso_matricula (
+	id_ing int identity (1,1) not null,
+
+
+

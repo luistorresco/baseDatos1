@@ -16,10 +16,9 @@ values ('carlos', 'Martines', 'carlos@mail.com'),
 		('Benjamin', 'Lee', 'benjaminlee@example.com'),
 		('Mia', 'Clark', 'miaclark@example.com'),
 		('Henry', 'Lewis', 'henrylewis@example.com');
-
-
-
 select * from estudiante;
+
+
 
 delete from estudiante where id_est ='02';
 
@@ -51,9 +50,7 @@ values ('Metodologias Agiles', '102'),
 select * from curso;
 
 insert into matricula
-values 
-
-		('2023-07-16','2023-08-01', '2023-12-01',2,2,2),
+values  ('2023-07-16','2023-08-01', '2023-12-01',2,2,2),
 		('2023-07-15', '2023-07-30', '2023-11-29',2,3,3),
 		('2023-07-16', '2023-07-29', '2023-11-28',2,5,5),
 
@@ -130,10 +127,32 @@ values
 		('2023-07-13', '2023-08-01', '2023-12-01',20,5,5),
 		('2023-07-13', '2023-08-01', '2023-12-01',20,1,1);
 
-
-
-
-		
-		
-
 select *from matricula;
+
+-- uso where 
+select nombre_est, apellido_est
+from estudiante 
+where id_est between 6 and 9;
+
+select nombre_est, apellido_est
+from estudiante 
+where (nombre_est = 'carlos');
+
+select nombre_est, apellido_est
+from estudiante 
+where (nombre_est = 'carlos' and apellido_est = 'martines');
+
+-- Order By
+
+select nombre_est, apellido_est
+from estudiante
+order by apellido_est;
+
+-- top 
+select top 5 * from estudiante;
+
+-- si quiero mostrar las ultimas filas 
+select TOP 5  * from estudiante 
+order by apellido_est desc ;
+
+

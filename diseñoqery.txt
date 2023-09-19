@@ -1,0 +1,43 @@
+
+marcas {
+	id_marcas int pk increments
+	Ford varchar(55)
+	Volkswagen varchar(55)
+	audi varchar(55)
+	Mazda varchar(55)
+	Jeep varchar(55)
+}
+
+Infoatomovil {
+	id_infoautomovil int pk increments
+	Id_marca varchar(55) >* marcas.id_marcas
+	modelo varchar(55) >* modelos.id_modelos
+	precio varchar(55)
+	descuento varchar(55)
+}
+
+datos {
+	id_datos int pk increments
+	potencia varchar(55)
+	cilindrada varchar(55)
+	trasmicion varchar(55)
+}
+
+equipamiento_de_serie {
+	id_equipamiento int pk increments
+	cierre varchar(55)
+	airbag varchar(55)
+}
+
+equipamiento_extras {
+	id_equipamiento_extras int(1,1) pk increments
+	aire varchar(55)
+	airbag varchar(55)
+	pintura varchar(55)
+}
+
+modelos {
+	id_modelos int(1,1) pk increments *> datos.id_datos
+	modelos_viejos varchar(55)
+	modelos_nuevos varchar(55)
+}
